@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" 
+    integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body ng-app="Module">
+    <section ng-controller = "ControllerCtrl">
+        <form class="form-group">
+            <label class="col-sm-2 control-label">Name</label><br>
+            <input id="name" type="text" name="name" ng-required="true" ng-model="user.name" required><br>
+            <label class="col-sm-2 control-label">Roll Number</label><br>
+            <input id="rollNo" type="text" name="rollNo" ng-required="true" ng-model="user.rollNo" required><br>
+            <label class="col-sm-2 control-label">Email Id</label><br>
+            <input type="text" id="email" name="email" ng-required="true" ng-model="user.email" required><br>
+            <label class="col-sm-2 control-label">Age</label><br>
+            <input id="age" type="number" name="age"  ng-maxlength="3" ng-required="true" ng-model="user.age" required><br>
+            <label class="col-sm-2 control-label">Date</label><br>
+            <input type="date" id="date" name="date" ng-required="true" ng-model="user.date" required><br>
+            <label class="col-sm-2 control-label">Gender</label><br>
+            <input type="radio" id="male" name="isMale" value=true ng-required="true" ng-model="user.gender" ng-checked="user.radio1" required>
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="isMale" value=false ng-required="true" ng-model="user.gender" ng-checked="user.radio2" required>
+            <label for="female">Female</label><br><br>
+            <input class="col-sm-2 control-label"type="submit" id="submitForm" ng-click="postData()" required>
+            <button class="col-sm-2 control-label" type="submit" ng-click="updateData()" required>Update</button>
+        </form>
+        
+        <p>{{database.id}}</p>
+        <hr>
+        <button ng-click="getData()">Get Response</button>
+        <h2>Total Request Count: {{database.size}}</h2>
+        <table class="table table-striped">
+            <thead><tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>RollNo</th>
+                <th>Age</th>
+                <th>Email</th>
+                <th>Date</th>
+                <th>Gender</th>
+                <th>Delete</th>
+                <th>Put</th>
+               </tr></thead>
+               <tbody>
+                <tr ng-repeat="student in database.responseArray">
+                  <td> {{ student.id }}</td>
+                  <td> {{ student.name }} </td>
+                  <td> {{ student.rollNo }} </td>
+                  <td> {{ student.age }} </td>
+                  <td> {{ student.email }} </td>
+                  <td> {{ student.date }} </td>
+                  <td> {{ student.gender }} </td>
+                  <td> <button  ng-click="deleteRowData(student.id)">Delete</button></td>
+                  <td> <button  ng-click="putData(student)">Put</button></td>
+                </tr>
+              </tbody>
+        </table>
+    </section>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.js" 
+    integrity="sha512-rCVQBDU9Ny0aKLo1/B1MqgRjWEMlCL3WJ0DD6mJeK6qMZqpN9JCRxPtMQWWR9XWCMFIqlSgT4uOdwpvxWTSejw==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="studentApi.js"></script>
+</body>
+</html>

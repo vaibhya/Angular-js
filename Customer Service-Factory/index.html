@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factory Service</title>
+</head>
+<body ng-app="Module" >
+    <section ng-controller="ControllerCtrl">
+        Enter Sentence: <input type="text" ng-model="input"><br>
+        Output: 
+        <p >{{output}}</p>
+        <button ng-click="editData()">Get Output</button>
+    
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.js" 
+    integrity="sha512-rCVQBDU9Ny0aKLo1/B1MqgRjWEMlCL3WJ0DD6mJeK6qMZqpN9JCRxPtMQWWR9XWCMFIqlSgT4uOdwpvxWTSejw==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="customService.js"></script>
+    
+    
+</body>
+</html>

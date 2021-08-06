@@ -1,0 +1,51 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="Style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body ng-app="Module">
+    <div class="flex-container" ng-controller="ControllerCtrl">
+      <div id="todoListDiv" class="flex-child">
+        <h1>Todo List</h1>
+        <input type="text" id="inputTodo" ng-model="task">
+        <button id="addButton" class="button" ng-click="getData(task)" >Add</button>
+        
+        <ul>
+          <a href="#" ng-repeat="todo in todo">
+            <li >{{todo.text}}</li>
+            <button id="{{todo.id}}" ng-click="deleteToDo(todo.id)">x</button>
+          </a>
+        </ul>
+        
+      </div>
+
+      <div id="dashBoard" class="flex-child">
+        <p><h1> Dashboard </h1></p>
+        <p id="lastUpdate">Last Update: {{latestTime}}</p>
+     
+        <p id="totalItems">Count: {{itemCount}}</p>
+        <button id="deleteToDo" class="button" ng-click="deleteAllData()">Delete All</button>
+      </div>
+    </div>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.js" 
+    integrity="sha512-rCVQBDU9Ny0aKLo1/B1MqgRjWEMlCL3WJ0DD6mJeK6qMZqpN9JCRxPtMQWWR9XWCMFIqlSgT4uOdwpvxWTSejw==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+  <script
+    src="https://code.jquery.com/jquery-3.6.0.js"
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+    integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script src="todo.js"></script>
+  
+</html>

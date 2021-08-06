@@ -1,0 +1,43 @@
+<form>
+    <label>Name</label><br>
+    <input id="name" type="text" name="name" ng-required="true" ng-model="user.name"><br>
+    <label>Roll Number</label><br>
+    <input id="rollNo" type="text" name="rollNo" ng-required="true" ng-model="user.rollNo"><br>
+    <label>Email Id</label><br>
+    <input type="text" id="email" name="email" ng-required="true" ng-model="user.email"><br>
+    <label>Age</label><br>
+    <input id="age" type="number" name="age"  ng-maxlength="3" ng-required="true" ng-model="user.age"><br>
+    <label>Date</label><br>
+    <input type="date" id="date" name="date" ng-required="true" ng-model="user.date"><br>
+    <label>Gender</label><br>
+    <input type="radio" id="male" name="isMale" value=true ng-required="true" ng-model="user.gender" ng-checked="user.radio1">
+    <label for="male">Male</label>
+    <input type="radio" id="female" name="isMale" value=false ng-required="true" ng-model="user.gender" ng-checked="user.radio2">
+    <label for="female">Female</label><br><br>
+    <input type="submit" id="submitForm" ng-click="updateData()">
+</form>
+
+<table class="table table-striped">
+    <thead><tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>RollNo</th>
+        <th>Age</th>
+        <th>Email</th>
+        <th>Date</th>
+        <th>Gender</th>
+        <th>Put</th>
+       </tr></thead>
+       <tbody>
+        <tr ng-repeat="student in database.responseArray">
+          <td> {{ student.id }}</td>
+          <td> {{ student.name }} </td>
+          <td> {{ student.rollNo }} </td>
+          <td> {{ student.age }} </td>
+          <td> {{ student.email }} </td>
+          <td> {{ student.date }} </td>
+          <td> {{ student.gender }} </td>
+          <td> <button  ng-click="putData(student)">Put</button></td>
+        </tr>
+      </tbody>
+</table>

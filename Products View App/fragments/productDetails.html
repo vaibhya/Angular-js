@@ -1,0 +1,24 @@
+
+<div class="container border border-primary">
+    <header>
+        <h2>Product Details: {{product.productName}}</h2>
+    </header>
+    <div class="boxed">
+        Product details
+        <div>
+            Name:{{product.productName}}<br>
+            Code:{{product.productCode}}<br>
+            Description:{{product.description}}<br>
+            Availability:{{product.releaseDate}}<br>
+            Price:{{product.price}}<br>
+            5 Star Rating:<div star-rating rating-value="product.starRating" max="5" ></div><br>
+        </div>    
+        <div>
+            <img src={{product.imageUrl}} alt="welcome image" width = "300" height = "200">
+        </div>
+        <footer>
+            <button ng-click="redirect()">Back</button>
+        </footer>
+        
+    </div>
+</div>

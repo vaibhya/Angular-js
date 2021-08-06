@@ -1,0 +1,7 @@
+.boxDiv{
+    background-color: rgb(240, 240, 148);
+    text-align:start;
+    display: block;
+    padding: 30px; 
+    border-style:outset;
+}

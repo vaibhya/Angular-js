@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student</title>
+</head>
+<body ng-app="modA">
+    <section ng-controller="controllerA">
+        <h1>Exc 1</h1>
+        <h1>Student Details</h1>
+        <label id="studentDetails">{{students}}</label>
+        <h2>Min</h2>
+        <label >{{values()[0]}}</label>
+        <h2>Max</h2>
+        <label id="maxValue">{{values()[1]}}</label>
+        <h2>Count</h2>
+        <label id="count">{{values()[3]}}</label>
+        <h2>Avg</h2>
+        <label id="avg">{{values()[2]/values()[3]}}</label>
+
+    </section>
+    <!-- <script src="angular.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.js" 
+    integrity="sha512-rCVQBDU9Ny0aKLo1/B1MqgRjWEMlCL3WJ0DD6mJeK6qMZqpN9JCRxPtMQWWR9XWCMFIqlSgT4uOdwpvxWTSejw==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="studentCgpa.js"></script>
+</body>
+</html>

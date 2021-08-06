@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body ng-app="Module">
+    <section ng-controller = "ControllerCtrl">
+        <form >
+            <label>Name</label><br>
+            <input id="name" type="text" name="name" ng-required="true" ng-model="user.name"><br>
+            <label>Roll Number</label><br>
+            <input id="rollNo" type="text" name="rollNo" ng-required="true" ng-model="user.rollNo"><br>
+            <label>Email Id</label><br>
+            <input type="text" id="email" name="email" ng-required="true" ng-model="user.email"><br>
+            <label>Age</label><br>
+            <input id="age" type="number" name="age"  ng-maxlength="3" ng-required="true" ng-model="user.age"><br>
+            <label>Date</label><br>
+            <input type="date" id="date" name="date" ng-required="true" ng-model="user.date"><br>
+            <label>Gender</label><br>
+            <input type="radio" id="male" name="isMale" value=true ng-required="true" ng-model="user.gender">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="isMale" value=false ng-required="true" ng-model="user.gender">
+            <label for="female">Female</label><br><br>
+            <input type="submit" id="submitForm" ng-click="postData()">
+        </form>
+        <p>{{content}}</p>
+    </section>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.js" 
+    integrity="sha512-rCVQBDU9Ny0aKLo1/B1MqgRjWEMlCL3WJ0DD6mJeK6qMZqpN9JCRxPtMQWWR9XWCMFIqlSgT4uOdwpvxWTSejw==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="studentApi.js"></script>
+</body>
+</html>
